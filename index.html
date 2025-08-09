@@ -10,7 +10,6 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,7 +33,7 @@
                     <li><a href="index.html#iletisim">İletişim</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
+            <div class="header-actions" id="headerActions">
                 <div class="social-icons">
                     <a href="https://www.instagram.com/bayhomeithalat" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=61578163581716" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -43,6 +42,17 @@
                     <a href="index.html" class="lang-btn active">TR</a>
                     <a href="index-en.html" class="lang-btn">EN</a>
                 </div>
+            </div>
+        </div>
+        <!-- Menü altında sosyal ve dil seçenekleri (mobilde görünecek) -->
+        <div class="mobile-actions" id="mobileActions">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/bayhomeithalat" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61578163581716" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="language-switcher">
+                <a href="index.html" class="lang-btn active">TR</a>
+                <a href="index-en.html" class="lang-btn">EN</a>
             </div>
         </div>
     </header>
@@ -151,24 +161,26 @@
             <p>© 2025 BayHome İthalat. Tüm hakları saklıdır.</p>
         </div>
     </footer>
-
     <script>
         const hamburger = document.getElementById('hamburger');
         const mainNav = document.getElementById('mainNav');
-        hamburger.addEventListener('click', function () {
+        const mobileActions = document.getElementById('mobileActions');
+        function toggleMenu() {
             mainNav.classList.toggle('active');
             hamburger.classList.toggle('active');
-        });
+            mobileActions.classList.toggle('active');
+        }
+        hamburger.addEventListener('click', toggleMenu);
         // Menü tıklandığında otomatik kapanması (isteğe bağlı)
         document.querySelectorAll('.main-nav ul li a').forEach(function (link) {
             link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
                     mainNav.classList.remove('active');
                     hamburger.classList.remove('active');
+                    mobileActions.classList.remove('active');
                 }
             });
         });
     </script>
-
 </body>
 </html>
