@@ -20,8 +20,8 @@
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="BayHome İthalat Logosu">
             </a>
-            <nav class="main-nav">
-                <div class="hamburger" onclick="toggleMenu()">
+            <nav class="main-nav" id="mainNav">
+                <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -153,9 +153,21 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.querySelector('.main-nav').classList.toggle('active');
-        }
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+        hamburger.addEventListener('click', function () {
+            mainNav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        // Menü tıklandığında otomatik kapanması (isteğe bağlı)
+        document.querySelectorAll('.main-nav ul li a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
     </script>
 
 </body>
