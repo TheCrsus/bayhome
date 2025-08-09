@@ -21,6 +21,11 @@
                 <img src="logo.png" alt="BayHome İthalat Logosu">
             </a>
             <nav class="main-nav">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul>
                     <li><a href="index.html">Anasayfa</a></li>
                     <li><a href="index.html#hizmetler">Hizmetler</a></li>
@@ -107,6 +112,12 @@
             <p>&copy; 2025 BayHome İthalat. Tüm hakları saklıdır.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.main-nav').classList.toggle('active');
+        }
+    </script>
 
 
 </body>

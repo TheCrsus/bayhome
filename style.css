@@ -854,3 +854,155 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+/* Mevcut stillerin altýna ekleyebilirsin */
+
+/* Responsive düzenler */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .main-header .container,
+    .main-footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Hamburger menü için */
+    .main-nav {
+        position: relative;
+    }
+
+        .main-nav ul {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0;
+            background: #fff;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100vw;
+            z-index: 99;
+            box-shadow: 0 5px 16px rgba(0,0,0,0.08);
+        }
+
+        .main-nav.active ul {
+            display: flex;
+        }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: #333;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+    .main-nav li {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        padding: 12px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+    }
+
+    .language-switcher {
+        margin-bottom: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col-md-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #anasayfa h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #anasayfa p {
+        text-align: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px 0;
+    }
+
+    .iletisim-icerik {
+        flex-direction: column;
+    }
+
+    .harita-kolon, .bilgi-kolon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form .form-group {
+        width: 100%;
+    }
+
+    .whatsapp-button {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
+    }
+
+    /* Logo ortalansýn */
+    .logo img {
+        max-width: 160px;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+}
+
+/* Hamburger menü masaüstünde gizli */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .main-nav ul {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        box-shadow: 0 5px 16px rgba(0,0,0,0.08);
+    }
+}
