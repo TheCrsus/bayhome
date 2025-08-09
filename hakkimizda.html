@@ -10,11 +10,9 @@
 <body>
     <header class="main-header">
         <div class="container">
-
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="BayHome İthalat Logosu">
             </a>
-
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="index.html">Anasayfa</a></li>
@@ -22,9 +20,12 @@
                     <li><a href="urunler.html">Ürünler</a></li>
                     <li><a href="hakkimizda.html">Hakkımızda</a></li>
                     <li><a href="index.html#iletisim">İletişim</a></li>
+                    <li class="mobile-lang-switcher">
+                        <a href="index-en.html" class="lang-btn">EN</a>
+                        <a href="index.html" class="lang-btn active">TR</a>
+                    </li>
                 </ul>
             </nav>
-
             <div class="header-actions">
                 <div class="social-icons">
                     <a href="https://www.instagram.com/bayhomeithalat" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -35,13 +36,11 @@
                     <a href="index-en.html" class="lang-btn">EN</a>
                 </div>
             </div>
-
             <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
         </div>
     </header>
 
@@ -119,25 +118,17 @@
 
             const hamburger = document.getElementById('hamburger');
             const mainNav = document.getElementById('mainNav');
-            const navLinks = document.querySelectorAll('.main-nav ul li a');
+            const body = document.body;
 
             // Hamburger menü tıklama olayını yönetir
             if (hamburger) {
                 hamburger.addEventListener('click', function () {
                     mainNav.classList.toggle('active');
                     hamburger.classList.toggle('active');
+                    // Sayfanın kaymasını engellemek için body'e class ekler/kaldırır
+                    body.classList.toggle('no-scroll');
                 });
             }
-
-            // Mobil menüde bir linke tıklandığında menüyü otomatik kapatır
-            navLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth <= 768) {
-                        mainNav.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    }
-                });
-            });
         });
     </script>
 
