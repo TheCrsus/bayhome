@@ -1,0 +1,822 @@
+/*
+ * GENEL STÝLLER VE RESET
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    /* Bu üç satýrý ekliyoruz */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 1; /* Varsayýlan opaklýk 1 olarak ayarlandý */
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.py-5 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+/*
+ * ANA SAYFA BÖLÜMÜ STÝLLERÝ (HERO)
+ */
+#anasayfa {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    /* BACKGROUND KURALI GÜNCELLENDÝ */
+    background-image: url('arkaplan.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    padding-top: 80px;
+}
+
+    #anasayfa::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    #anasayfa .container {
+        z-index: 2;
+    }
+
+    #anasayfa h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    #anasayfa p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+/*
+ * NAVÝGASYON VE HEADER STÝLLERÝ (YENÝ TASARIM)
+ */
+.main-header {
+    background: #fff;
+    padding: 1.5rem 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .main-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .main-header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+        .main-header .logo img {
+            height: 60px;
+        }
+
+.main-nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+    .main-nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+
+            .main-nav ul li a {
+                color: #555;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+                .main-nav ul li a:hover {
+                    color: #8bd2ed;
+                }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    color: #555;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+    .social-icon:hover {
+        color: #8bd2ed;
+        transform: scale(1.1);
+    }
+
+.language-switcher {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-btn {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+    .lang-btn:hover {
+        background-color: #e9e9e9;
+        border-color: #bbb;
+        color: #8bd2ed;
+    }
+
+    .lang-btn.active {
+        background-color: #333 !important;
+        color: #fff !important;
+        border-color: #333 !important;
+        transform: scale(1.05) !important;
+    }
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav {
+        margin-top: 15px;
+    }
+
+    .header-actions {
+        position: static;
+        margin-top: 15px;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .social-icons, .language-switcher {
+        justify-content: center;
+    }
+}
+
+/*
+ * CTA BUTON STÝLLERÝ (Tekrar eden kýsýmlarý birleþtirdik)
+ */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+    .cta-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+    }
+
+/*
+ * HÝZMETLER BÖLÜMÜ STÝLLERÝ
+ */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+.card-icon {
+    margin-bottom: 25px;
+}
+
+    .card-icon i {
+        color: #007bff;
+    }
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.card-text {
+    color: #666;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/*
+ * HAKKIMIZDA'YA YÖNLENDÝRME BÖLÜMÜ STÝLLERÝ
+ */
+#hakkimizda-cta {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    /* BACKGROUND KURALI GÜNCELLENDÝ */
+    background-image: url('hakkimizdafoto.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+}
+
+    #hakkimizda-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    #hakkimizda-cta h2,
+    #hakkimizda-cta p,
+    #hakkimizda-cta .cta-button {
+        position: relative;
+        z-index: 2;
+    }
+
+    #hakkimizda-cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #hakkimizda-cta p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+
+/* ÝLETÝÞÝM BÖLÜMÜ STÝLLERÝ (YENÝDEN DÜZENLENMÝÞ) */
+#iletisim {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+    #iletisim h2 {
+        color: #333;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+.iletisim-icerik {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.harita-kolon,
+.bilgi-kolon {
+    flex: 1;
+    max-width: 550px; /* Eþit geniþlik için */
+}
+
+.harita {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+    .harita iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    }
+
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+    .contact-info h3 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .contact-info p {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .contact-info i {
+        color: #007bff;
+        margin-right: 15px;
+        font-size: 1.2rem;
+        width: 25px;
+        text-align: center;
+    }
+
+@media (max-width: 768px) {
+    .iletisim-icerik {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .harita-kolon, .bilgi-kolon {
+        max-width: 100%;
+    }
+}
+/*
+ * HAKKIMIZDA SAYFASI STÝLLERÝ (BAÐIMSIZ)
+ */
+#hakkimizda-ana {
+    padding-top: 120px;
+}
+
+.hakkimizda-blok {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+    .hakkimizda-blok:last-child {
+        border-bottom: none;
+    }
+
+    .hakkimizda-blok .hakkimizda-metin {
+        flex: 1;
+    }
+
+    .hakkimizda-blok .hakkimizda-gorsel {
+        flex: 1;
+        text-align: center;
+    }
+
+    .hakkimizda-blok h3 {
+        font-size: 2rem;
+        color: #007bff;
+        margin-bottom: 15px;
+    }
+
+    .hakkimizda-blok p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .hakkimizda-blok.reverse {
+        flex-direction: row-reverse;
+    }
+
+.hakkimizda-gorsel img {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+/*
+ * FOOTER STÝLLERÝ
+ */
+.main-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+    .main-footer p {
+        margin: 0;
+    }
+
+/*
+ * DUYARLI (RESPONSIVE) TASARIM
+ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+        .main-nav ul li {
+            margin: 5px 0;
+        }
+
+    #anasayfa h1 {
+        font-size: 2rem;
+    }
+
+    #anasayfa p {
+        font-size: 1rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-md-4, .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .hakkimizda-blok {
+        flex-direction: column;
+    }
+
+    .iletisim-icerik {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sol-kolon, .sag-kolon {
+        max-width: 100%;
+    }
+
+    .harita {
+        height: 400px;
+    }
+}
+
+/*
+ * ÜRÜNLER SAYFASI STÝLLERÝ
+ */
+#urunler {
+    padding-top: 120px; /* Sabit menüden sonra baþlamasý için */
+}
+
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.galeri-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Köþegenliði korur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .galeri-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .galeri-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+.galeri-aciklama {
+    padding: 20px;
+    text-align: center;
+}
+
+    .galeri-aciklama h4 {
+        font-size: 1.4rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .galeri-aciklama p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+/* Video için responsive ayar */
+.video-kapsayici {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 oraný */
+    height: 0;
+    overflow: hidden;
+}
+
+    .video-kapsayici iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+/*
+ * SAYFALAMA (PAGINATION) STÝLLERÝ
+ */
+#sayfalama-butonlari {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sayfa-butonu {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .sayfa-butonu:hover {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+    }
+
+    .sayfa-butonu.aktif {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+    }
+
+/*
+ * DÝL DEÐÝÞTÝRME BUTONLARI (YENÝ VE DAHA BELÝRGÝN STÝL)
+ */
+.language-switcher {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    gap: 5px;
+}
+
+.lang-btn {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: 2px solid #ddd; /* Kenarlýk kalýnlýðýný artýrdýk */
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+    text-transform: uppercase; /* Harfleri büyük yaptýk */
+}
+
+    .lang-btn:hover {
+        background-color: #e9e9e9;
+        border-color: #bbb;
+    }
+
+    .lang-btn.active {
+        background-color: #333 !important; /* Arka planý zorla uygula */
+        color: #fff !important; /* Rengi zorla uygula */
+        border-color: #333 !important;
+        transform: scale(1.05) !important;
+    }
+
+@media (max-width: 768px) {
+    .language-switcher {
+        position: static;
+        margin-top: 15px;
+    }
+}
+
+/*
+ * ÜRÜNLER SAYFASI - KATALOG STÝLLERÝ
+ */
+#urunler {
+    padding-top: 120px;
+}
+
+.katalog-kapsayici {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Köþegenliði korur */
+}
+
+    .katalog-kapsayici iframe {
+        width: 100%;
+        height: 800px; /* Katalog yüksekliðini buradan ayarlayabilirsiniz */
+        border: none;
+    }
+
+/*
+ * WHATSAPP BUTONU STÝLLERÝ VE ANÝMASYONU
+ */
+
+/* Animasyon tanýmý */
+@keyframes whatsapp-jump {
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-5px);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+
+    60% {
+        transform: translateY(-3px);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    /* Animasyonu butona uyguluyoruz */
+    animation: whatsapp-jump 2s infinite 3s;
+}
+
+    .whatsapp-button:hover {
+        transform: scale(1.1);
+        /* Fare üzerine gelince animasyonu durdurur */
+        animation: none;
+    }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
