@@ -577,42 +577,6 @@ body {
         width: 100%;
     }
 
-    /* ANA SAYFA (HERO) BÖLÜMÜ */
-    #anasayfa h1 {
-        font-size: 2rem; /* Baþlýk boyutunu küçültür */
-    }
-
-    #anasayfa p {
-        font-size: 1rem;
-    }
-
-    /* HÝZMETLER VE DÝÐER KART BÖLÜMLERÝ */
-    .row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .col-md-4, .col-md-6 {
-        flex: 0 0 100%; /* Sütunlarý tam geniþlik yapar */
-        max-width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .hakkimizda-blok {
-        flex-direction: column; /* Hakkýmýzda bloklarýný alt alta sýralar */
-        gap: 20px;
-    }
-
-        .hakkimizda-blok.reverse {
-            flex-direction: column;
-        }
-
     /* ÝLETÝÞÝM BÖLÜMÜ */
     .iletisim-icerik {
         flex-direction: column;
