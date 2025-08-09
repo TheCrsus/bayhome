@@ -10,14 +10,14 @@
             opacity: 0;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="BayHome İthalat Logosu">
+            <a href="index-en.html" class="logo">
+                <img src="logo.png" alt="BayHome Import Logo">
             </a>
             <nav class="main-nav" id="mainNav">
                 <div class="hamburger" id="hamburger">
@@ -26,35 +26,46 @@
                     <span></span>
                 </div>
                 <ul>
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li><a href="index.html#hizmetler">Hizmetler</a></li>
-                    <li><a href="urunler.html">Ürünler</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="index.html#iletisim">İletişim</a></li>
+                    <li><a href="index-en.html">Home</a></li>
+                    <li><a href="index-en.html#services">Services</a></li>
+                    <li><a href="products-en.html">Products</a></li>
+                    <li><a href="about-en.html">About Us</a></li>
+                    <li><a href="index-en.html#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
+            <div class="header-actions" id="headerActions">
                 <div class="social-icons">
                     <a href="https://www.instagram.com/bayhomeithalat" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=61578163581716" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="language-switcher">
-                    <a href="index.html" class="lang-btn active">TR</a>
-                    <a href="index-en.html" class="lang-btn">EN</a>
+                    <a href="index.html" class="lang-btn">TR</a>
+                    <a href="index-en.html" class="lang-btn active">EN</a>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Actions: menu under hamburger -->
+        <div class="mobile-actions" id="mobileActions">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/bayhomeithalat" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61578163581716" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="language-switcher">
+                <a href="index.html" class="lang-btn">TR</a>
+                <a href="index-en.html" class="lang-btn active">EN</a>
             </div>
         </div>
     </header>
 
-    <section id="anasayfa">
+    <section id="home">
         <div class="container">
             <h1>Your Reliable Partner in Global Sourcing</h1>
             <p>We import the best quality products from around the world for you.</p>
-            <a href="#hizmetler" class="cta-button">Discover Our Services</a>
+            <a href="#services" class="cta-button">Discover Our Services</a>
         </div>
     </section>
 
-    <section id="hizmetler" class="bg-light py-5">
+    <section id="services" class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-4">Our Services</h2>
             <p class="text-center mb-5">Explore the unique solutions we offer for your business.</p>
@@ -96,13 +107,13 @@
         </div>
     </section>
 
-    <section id="hakkimizda-cta">
+    <section id="about-cta">
         <h2>Discover Our Story</h2>
         <p>Learn more about our passion and core values.</p>
-        <a href="hakkimizda.html" class="cta-button">About Us</a>
+        <a href="about-en.html" class="cta-button">About Us</a>
     </section>
 
-    <section id="iletisim" class="bg-light py-5">
+    <section id="contact" class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-5">Contact Us</h2>
             <div class="iletisim-icerik">
@@ -152,20 +163,22 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const mainNav = document.getElementById('mainNav');
+        const mobileActions = document.getElementById('mobileActions');
         hamburger.addEventListener('click', function () {
             mainNav.classList.toggle('active');
             hamburger.classList.toggle('active');
+            mobileActions.classList.toggle('active');
         });
-        // Menü tıklandığında otomatik kapanması (isteğe bağlı)
+        // Close menu when link clicked (mobile)
         document.querySelectorAll('.main-nav ul li a').forEach(function (link) {
             link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
                     mainNav.classList.remove('active');
                     hamburger.classList.remove('active');
+                    mobileActions.classList.remove('active');
                 }
             });
         });
     </script>
-
 </body>
 </html>
