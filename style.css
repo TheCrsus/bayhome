@@ -1023,7 +1023,7 @@ body {
     }
 }
 
-/* Menü masaüstünde her zaman açýk */
+/* Desktop menu always visible */
 .main-nav ul {
     display: flex;
     gap: 24px;
@@ -1214,12 +1214,12 @@ body {
         margin-bottom: 20px;
     }
 
-    #anasayfa h1 {
+    #home h1 {
         font-size: 2rem;
         text-align: center;
     }
 
-    #anasayfa p {
+    #home p {
         text-align: center;
     }
 
