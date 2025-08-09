@@ -535,71 +535,104 @@ body {
     .main-footer p {
         margin: 0;
     }
-
 /*
- * DUYARLI (RESPONSIVE) TASARIM
+ * MOBÝL VE TABLET ÝÇÝN DUYARLI (RESPONSIVE) TASARIM
+ * Maksimum 768px geniþlikteki ekranlar için geçerli
  */
 @media (max-width: 768px) {
+    /* Genel Ayarlar */
     .container {
-        padding: 0 15px;
+        padding: 0 15px; /* Daha küçük ekranlarda kenar boþluklarýný ayarlar */
     }
 
+    /* NAVÝGASYON - LOGO VE MENÜ */
     .main-header .container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
+    .main-header .logo img {
+        height: 50px; /* Mobil için logo boyutu */
+    }
+
     .main-nav ul {
-        flex-direction: column;
-        margin-top: 10px;
+        flex-direction: column; /* Menü linklerini alt alta sýralar */
+        margin-top: 15px;
     }
 
         .main-nav ul li {
             margin: 5px 0;
         }
 
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .social-icons, .language-switcher {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* ANA SAYFA (HERO) BÖLÜMÜ */
     #anasayfa h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Baþlýk boyutunu küçültür */
     }
 
     #anasayfa p {
         font-size: 1rem;
     }
 
+    /* HÝZMETLER VE DÝÐER KART BÖLÜMLERÝ */
     .row {
         flex-direction: column;
         align-items: center;
     }
 
     .col-md-4, .col-md-6 {
-        flex: 0 0 100%;
+        flex: 0 0 100%; /* Sütunlarý tam geniþlik yapar */
         max-width: 100%;
         padding: 0;
         margin-bottom: 20px;
     }
 
     .card {
+        width: 100%;
         margin-bottom: 20px;
     }
 
     .hakkimizda-blok {
-        flex-direction: column;
+        flex-direction: column; /* Hakkýmýzda bloklarýný alt alta sýralar */
+        gap: 20px;
     }
 
+        .hakkimizda-blok.reverse {
+            flex-direction: column;
+        }
+
+    /* ÝLETÝÞÝM BÖLÜMÜ */
     .iletisim-icerik {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
 
-    .sol-kolon, .sag-kolon {
+    .harita-kolon, .bilgi-kolon {
         max-width: 100%;
     }
 
-    .harita {
-        height: 400px;
+    .harita iframe {
+        height: 300px; /* Harita yüksekliðini küçültür */
+    }
+
+    /* GENEL BOÞLUK AYARLARI */
+    .py-5 {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
-
 /*
  * ÜRÜNLER SAYFASI STÝLLERÝ
  */
