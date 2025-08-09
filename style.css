@@ -121,7 +121,7 @@ body {
  */
 .main-header {
     background: #fff;
-    padding: 1.5rem 20px;
+    padding: 1rem 20px;
     position: sticky;
     top: 0;
     left: 0;
@@ -141,10 +141,11 @@ body {
     .main-header .logo {
         display: flex;
         align-items: center;
+        height: 40px;
     }
 
         .main-header .logo img {
-            height: 60px;
+            height: 40px;
         }
 
 .main-nav {
@@ -553,7 +554,7 @@ body {
     }
 
     .main-header .logo img {
-        height: 50px; /* Mobil için logo boyutu */
+        height: 40px; /* Mobil için logo boyutu */
     }
 
     .main-nav ul {
