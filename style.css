@@ -1240,28 +1240,20 @@ body {
         }
 }
 
-/* =============================================== */
-/* MOBÝL ÝYÝLEÞTÝRMELER (NÝHAÝ VERSÝYON - v2)      */
-/* =============================================== */
+/* ======================================================== */
+/* MOBÝL ÝYÝLEÞTÝRMELER (NÝHAÝ, ÇALIÞAN VERSÝYON)           */
+/* ======================================================== */
 
-/* Mobil menü açýkken arkadaki sayfanýn kaymasýný engellemek için */
+/* Mobil menü açýkken arkadaki sayfanýn kaymasýný engeller */
 body.no-scroll {
     overflow: hidden;
 }
 
-
 @media (max-width: 768px) {
-    /* -- HEADER DÜZENLEMELERÝ -- */
+    /* -- 1. HEADER DÜZENLEMELERÝ -- */
     .main-header .container {
-        /* Elemanlarýn sýðmadýðýnda alt satýra geçmesine izin ver */
         flex-wrap: wrap;
-        /* Gerekirse dikeyde boþluk býrak */
         row-gap: 10px;
-    }
-
-    /* Masaüstü navigasyon menüsünü mobilde gizle */
-    .main-nav {
-        display: none;
     }
 
     /* Logo ve saðdaki aksiyonlar arasýnda boþluk yarat */
@@ -1276,7 +1268,7 @@ body.no-scroll {
         gap: 10px;
     }
 
-        /* Ýkonlarý ve butonlarý mobilde biraz küçültelim */
+        /* Ýkonlarý ve butonlarý mobilde biraz küçült */
         .header-actions .social-icon {
             font-size: 1.4rem;
             width: 30px;
@@ -1289,16 +1281,52 @@ body.no-scroll {
         }
 
 
-    /* -- SAYFA ÝÇERÝÐÝ DÜZENLEMELERÝ -- */
+    /* -- 2. AÇILIR MENÜ (HAMBURGER) ÝÇÝN KURALLAR -- */
 
-    /* Hizmetler ve diðer sütunlarýn mobilde alt alta gelmesi için */
+    /* Navigasyonun kendisini deðil, ÝÇÝNDEKÝ LÝSTEYÝ gizle ve konumlandýr */
+    .main-nav ul {
+        display: flex; /* Ýçindeki elemanlarý yönetmek için */
+        flex-direction: column;
+        gap: 5px; /* Menü elemanlarý arasýna boþluk */
+        /* Paneli ekraný kaplayacak þekilde ayarla */
+        position: absolute;
+        top: 75px; /* Header'ýn hemen altýna (header yüksekliðinize göre ayarlayabilirsiniz) */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* Animasyon için baþlangýç durumu: Gizli */
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none; /* Gizliyken týklanamaz yap */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* JavaScript ile .active sýnýfý eklendiðinde menüyü göster */
+    .main-nav.active ul {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; /* Görünürken týklanabilir yap */
+    }
+
+    /* Menü linklerine stil ver */
+    .main-nav ul li a {
+        padding: 10px 20px;
+        display: block; /* Týklama alanýný geniþlet */
+        text-align: center;
+    }
+
+    /* -- 3. SAYFA ÝÇERÝÐÝ DÜZENLEMELERÝ -- */
+
+    /* Hizmetler ve diðer sütunlarý mobilde alt alta getir */
     .col-md-4, .col-md-6 {
         flex-basis: 100%;
         max-width: 100%;
         margin-bottom: 30px;
     }
 
-    /* Hakkýmýzda sayfasýndaki metin-görsel bloklarýnýn mobilde düzgün sýralanmasý için */
+    /* Hakkýmýzda sayfasýndaki bloklarý mobilde düzgün sýrala */
     .hakkimizda-blok {
         flex-direction: column !important;
     }
