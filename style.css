@@ -1241,54 +1241,69 @@ body {
 }
 
 /* =============================================== */
-/* MOBÝL ÝYÝLEÞTÝRMELER (BU BÖLÜMÜ EN SONA EKLEYÝN) */
+/* MOBÝL ÝYÝLEÞTÝRMELER (NÝHAÝ VERSÝYON - v2)      */
 /* =============================================== */
-
-@media (max-width: 768px) {
-
-    /* Hizmetler ve diðer 3'lü sütunlarýn mobilde alt alta gelmesi için */
-    .col-md-4 {
-        flex-basis: 100%; /* Sütunun geniþliðini %100 yapar */
-        max-width: 100%;
-        margin-bottom: 30px; /* Kartlar arasýna boþluk koyar */
-    }
-
-    /* Hakkýmýzda sayfasýndaki metin-görsel bloklarýnýn mobilde düzgün sýralanmasý için */
-    .hakkimizda-blok {
-        flex-direction: column !important; /* Görsel ve metni alt alta dizer */
-    }
-
-        /* Görselin her zaman metinden önce (üstte) gelmesini saðlar */
-        .hakkimizda-blok .hakkimizda-gorsel {
-            order: -1;
-        }
-}
 
 /* Mobil menü açýkken arkadaki sayfanýn kaymasýný engellemek için */
 body.no-scroll {
     overflow: hidden;
 }
 
-/* Header Dil Butonlarý Ýçin Mobil/Masaüstü Ayarlarý */
-
-/* Mobilde görünecek dil butonlarýný masaüstünde gizle */
-.mobile-lang-switcher {
-    display: none;
-}
 
 @media (max-width: 768px) {
-    /* Masaüstünde görünen sosyal medya ve dil butonlarýný mobilde gizle */
-    .header-actions {
+    /* -- HEADER DÜZENLEMELERÝ -- */
+    .main-header .container {
+        /* Elemanlarýn sýðmadýðýnda alt satýra geçmesine izin ver */
+        flex-wrap: wrap;
+        /* Gerekirse dikeyde boþluk býrak */
+        row-gap: 10px;
+    }
+
+    /* Masaüstü navigasyon menüsünü mobilde gizle */
+    .main-nav {
         display: none;
     }
 
-    /* Mobilde görünecek dil butonlarýný göster ve stil ver */
-    .mobile-lang-switcher {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #eee; /* Üstüne ayýrýcý bir çizgi ekler */
+    /* Logo ve saðdaki aksiyonlar arasýnda boþluk yarat */
+    .logo {
+        margin-right: auto;
     }
+
+    /* Saðdaki aksiyonlarý (sosyal, dil) görünür tut ve yanyana diz */
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+        /* Ýkonlarý ve butonlarý mobilde biraz küçültelim */
+        .header-actions .social-icon {
+            font-size: 1.4rem;
+            width: 30px;
+            height: 30px;
+        }
+
+        .header-actions .lang-btn {
+            padding: 4px 10px;
+            font-size: 0.9rem;
+        }
+
+
+    /* -- SAYFA ÝÇERÝÐÝ DÜZENLEMELERÝ -- */
+
+    /* Hizmetler ve diðer sütunlarýn mobilde alt alta gelmesi için */
+    .col-md-4, .col-md-6 {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Hakkýmýzda sayfasýndaki metin-görsel bloklarýnýn mobilde düzgün sýralanmasý için */
+    .hakkimizda-blok {
+        flex-direction: column !important;
+    }
+
+        .hakkimizda-blok .hakkimizda-gorsel {
+            order: -1;
+        }
 }
