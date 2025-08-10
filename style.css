@@ -1335,3 +1335,18 @@ body.no-scroll {
             order: -1;
         }
 }
+
+/* ======================================================== */
+/* MENÜ AÇIKKEN ÝKON GÝZLEME (SON DOKUNUÞ)                   */
+/* ======================================================== */
+
+/* header-actions'a yumuþak bir geçiþ efekti ekleyelim */
+.header-actions {
+    transition: opacity 0.3s ease;
+}
+
+/* Header'da menu-open sýnýfý olduðunda, header-actions'ý gizle */
+.main-header.menu-open .header-actions {
+    opacity: 0;
+    pointer-events: none; /* Gizliyken týklanmasýný da engelle */
+}

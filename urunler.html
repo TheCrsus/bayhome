@@ -64,25 +64,23 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Sayfanın yavaşça belirmesini sağlar (fade-in efekti)
             document.body.style.transition = 'opacity 0.5s ease-in-out';
             document.body.style.opacity = 1;
 
             const hamburger = document.getElementById('hamburger');
             const mainNav = document.getElementById('mainNav');
             const body = document.body;
+            const mainHeader = document.querySelector('.main-header'); // <-- YENİ EKLENDİ
 
-            // Hamburger menü tıklama olayını yönetir
             if (hamburger) {
                 hamburger.addEventListener('click', function () {
                     mainNav.classList.toggle('active');
                     hamburger.classList.toggle('active');
-                    // Sayfanın kaymasını engellemek için body'e class ekler/kaldırır
                     body.classList.toggle('no-scroll');
+                    mainHeader.classList.toggle('menu-open'); // <-- YENİ EKLENDİ
                 });
             }
         });
     </script>
-
 </body>
 </html>
